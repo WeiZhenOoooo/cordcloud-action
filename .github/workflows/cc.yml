@@ -11,5 +11,5 @@ jobs:
     steps:
       - uses: yanglbme/cordcloud-action@main
         with:
-          email: ${{ CC_EMAIL }}
-          passwd: ${{ CC_PASSWD }}
+          email: ${{ secrets.CC_EMAIL }}
+          passwd: ${{ secrets.CC_PASSWD }}
