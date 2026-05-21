@@ -18,6 +18,12 @@ inputs:
     description: "base host"
     required: false
     default: "cordcloud.us,cordcloud.one,cordcloud.biz,c-cloud.xyz"
+  imap_server:
+    description: "IMAP server address (e.g., imap.qq.com, imap.163.com)"
+    required: false
+  auth_code:
+    description: "Email authorization code (not login password)"
+    required: false
 outputs:
   result:
     description: "The result of api"

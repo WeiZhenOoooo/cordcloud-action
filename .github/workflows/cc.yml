@@ -1,0 +1,17 @@
+name: CordCloud
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  checkin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: WeiZhenOoooo/cordcloud-action@main
+        with:
+          email: ${{ secrets.CC_EMAIL }}
+          passwd: ${{ secrets.CC_PASSWD }}
+          imap_server: ${{ secrets.CC_IMAP_SERVER }}
+          auth_code: ${{ secrets.CC_AUTH_CODE }}

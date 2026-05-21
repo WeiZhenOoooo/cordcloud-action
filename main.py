@@ -22,6 +22,8 @@ try:
     passwd = core.get_input('passwd', required=True)
     secret = core.get_input('secret')
     host = core.get_input('host') or 'cordcloud.us,cordcloud.one,cordcloud.biz,c-cloud.xyz'
+    imap_server = core.get_input('imap_server')
+    auth_code = core.get_input('auth_code')
     code = pyotp.TOTP(secret).now() if secret else ''
 
     # host 预处理：切分、过滤空值
@@ -30,7 +32,7 @@ try:
     for i, h in enumerate(hosts):
         # 依次尝试每个 host
         log.info(f'当前尝试 host：{h}')
-        action = Action(email, passwd, code=code, host=h)
+        action = Action(email, passwd, code=code, host=h, imap_server=imap_server, auth_code=auth_code)
         try:
             # 登录
             res = action.login()
