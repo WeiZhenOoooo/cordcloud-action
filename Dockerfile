@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN python3 -m pip install --upgrade pip
 RUN pip install --target=/app -r requirements.txt
 
-FROM gcr.io/distroless/python3
+FROM python:3-slim
 COPY --from=builder /app /app
 WORKDIR /app
 ENV PYTHONPATH /app
