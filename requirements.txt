@@ -2,4 +2,4 @@ actions-toolkit
 pyotp
 requests
 cloakbrowser
-greenlet==3.5.0
+greenlet==3.0.3
