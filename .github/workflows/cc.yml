@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: WeiZhenOoooo/cordcloud-action@main
         with:
-          email: ${{ secrets.CC_EMAIL }}
-          passwd: ${{ secrets.CC_PASSWD }}
-          imap_server: ${{ secrets.CC_IMAP_SERVER }}
-          auth_code: ${{ secrets.CC_AUTH_CODE }}
+          EMAIL: ${{ secrets.CC_EMAIL }}          # 改为大写
+          PASSWD: ${{ secrets.CC_PASSWD }}        # 改为大写
+          IMAP_SERVER: ${{ secrets.CC_IMAP_SERVER }}  # 改为大写
+          AUTH_CODE: ${{ secrets.CC_AUTH_CODE }}      # 改为大写
