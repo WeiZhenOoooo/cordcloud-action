@@ -9,6 +9,9 @@ jobs:
   checkin:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
       - uses: WeiZhenOoooo/cordcloud-action@main
         with:
           email: ${{ secrets.CC_EMAIL }}
